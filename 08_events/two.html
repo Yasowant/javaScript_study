@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Example</title>
+</head>
+<body>
+    <!-- Main Heading -->
+    <h1>Yasowant Nayak</h1>
+    
+    <!-- Button to stop the timeout -->
+    <button id="stop">Stop 🛑</button>
+    
+    <script>
+        // Function to log "Yasowant" to the console
+        const sayYash = function () {
+            console.log("Yasowant");
+        };
+
+        // Function to change the text of the <h1> element
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = 'Yasowant';
+        };
+
+        // Set a timeout to execute the changeText function after 2000ms
+        const changeMe = setTimeout(changeText, 2000);
+
+        // Add an event listener to the "Stop" button
+        document.querySelector("#stop").addEventListener('click', function () {
+            // Clear the timeout if the button is clicked
+            clearTimeout(changeMe);
+            console.log('STOPPED');
+        });
+    </script>
+</body>
+</html>
